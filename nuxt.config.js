@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'registration-form',
+    title: 'crud-app',
     htmlAttrs: {
       lang: 'en'
     },
