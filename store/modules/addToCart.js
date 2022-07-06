@@ -11,7 +11,6 @@ export const state = () => ({
   export const mutations = {
     increment(state) {
       state.count++;
-    //   state.cart.push(product)
     },
 
     Add_To_Cart(state,  product) {
