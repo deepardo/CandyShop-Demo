@@ -4,12 +4,14 @@ export const state = () => ({
   });
 
   export const getters = {
-    getCounter: state => state.count
+    getCounter: state => state.count,
+    cardData: state => state.cart
   };
   
   export const mutations = {
     increment(state) {
-      state.count++
+      state.count++;
+    //   state.cart.push(product)
     },
 
     Add_To_Cart(state,  product) {

@@ -121,6 +121,7 @@ export default {
   computed: {
     ...mapGetters({
       getCounter: "modules/addToCart/getCounter",
+      cardData: "modules/addToCart/cardData",
     }),
   },
   created() {
@@ -157,9 +158,16 @@ export default {
       increment: "modules/addToCart/increment",
     }),
     addToCart(item) {
-      this.$bvToast.show("add-to-cart");
-      this.increment();
-      this.$store.dispatch("addToCart/addProductToCart", item);
+      let productInCart = this.cardData.find((product) => {
+        return product.id === item.id;
+      });
+      if (productInCart) {
+        alert("Item already added into cart");
+      } else {
+        this.$bvToast.show("add-to-cart");
+        this.increment();
+        this.$store.dispatch("modules/addToCart/addProductToCart", item);
+      }
     },
     goToCartPage() {
       this.$router.push("/cartpage");
